@@ -1,0 +1,46 @@
+:root {
+	color-scheme: dark light;
+}
+
+button {
+	font-size: inherit;
+}
+
+calc-app, calc-tape, calc-display {
+	margin: auto;
+}
+
+calc-app {
+	height: 100vh;
+
+	font-size: 1em;
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+}
+
+calc-controls {
+	display: grid;
+	max-width: 800px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+		"clea clea back divi"
+		"but7 but8 but9 mult"
+		"but4 but5 but6 minu"
+		"but1 but2 but3 plus"
+		"but0 but0 poin plus";
+}
+
+calc-tape {
+	grid-area: tape;
+	opacity: 0.8;
+}
+
+calc-display {
+	grid-area: disp;
+}
+
+calc-memory,
+calc-preview {
+	opacity: 0.5;
+}
