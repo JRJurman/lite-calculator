@@ -4,40 +4,55 @@
 
 button {
 	font-size: inherit;
+	border-radius: 50px;
+	border: none;
+	margin: 6px;
 }
 
-calc-app, calc-tape, calc-display {
-	margin: auto;
+[digit] {
+	background: #FFAB0F;
+}
+
+[operator] {
+	background: #247AFD;
+}
+
+[equal] {
+	background: #00aa3e;
+}
+
+[clear] {
+	background: #FE46A5;
+	font-size: 0.8em;
 }
 
 calc-app {
 	height: 100vh;
 
-	font-size: 1em;
+	font-size: max(12vh, 3em);
 	display: flex;
+	align-items: center;
+	justify-content: end;
 	flex-direction: column;
-	max-width: 600px;
 }
 
 calc-controls {
 	display: grid;
-	max-width: 800px;
+	font-size: 0.75em;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-areas:
 		"clea clea back divi"
 		"but7 but8 but9 mult"
 		"but4 but5 but6 minu"
 		"but1 but2 but3 plus"
-		"but0 but0 poin plus";
+		"but0 but0 poin equa";
 }
 
 calc-tape {
-	grid-area: tape;
 	opacity: 0.8;
 }
 
 calc-display {
-	grid-area: disp;
 }
 
 calc-memory,

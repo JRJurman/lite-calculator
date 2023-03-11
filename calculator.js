@@ -25,7 +25,7 @@ const onPressDigit = (num) => () => {
 };
 
 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].forEach((digit) => {
-	const calcButton = html` <button style="grid-area: but${digit};" onclick=${onPressDigit(digit)}>${digit}</button> `;
+	const calcButton = html` <button digit style="grid-area: but${digit};" onclick=${onPressDigit(digit)}>${digit}</button> `;
 	document.querySelector('calc-controls').appendChild(calcButton);
 });
 
@@ -40,9 +40,12 @@ const onPressOperator = (operator) => () => {
 };
 
 [{value: '+', key: 'plus'}, {value: '-', key: 'minu'}, {value: '/', key: 'divi'}, {value: '*', key: 'mult'}].forEach(({value: operator, key}) => {
-	const operatorButton = html`<button style="grid-area: ${key}" onclick=${onPressOperator(operator)}>${operator}</button>`;
+	const operatorButton = html`<button operator style="grid-area: ${key}" onclick=${onPressOperator(operator)}>${operator}</button>`;
 	document.querySelector('calc-controls').appendChild(operatorButton);
 });
+
+const equalButton = html`<button equal style="grid-area: equa" onclick=${onPressOperator('+')}>=</button>`;
+document.querySelector('calc-controls').appendChild(equalButton);
 
 const onPressClear = () => {
 	calcState.memory = '0';
@@ -51,7 +54,7 @@ const onPressClear = () => {
 	updateDisplay();
 };
 
-const clearButton = html`<button style="grid-area: clea;" onclick=${onPressClear}>Clear</button>`;
+const clearButton = html`<button clear style="grid-area: clea;" onclick=${onPressClear}>Clear</button>`;
 document.querySelector('calc-controls').appendChild(clearButton);
 
 const onPressBackspace = () => {
@@ -59,7 +62,7 @@ const onPressBackspace = () => {
 	updateDisplay();
 };
 
-const backspaceButton = html`<button style="grid-area: back;" onclick=${onPressBackspace}>⌫</button>`;
+const backspaceButton = html`<button clear style="grid-area: back;" onclick=${onPressBackspace}>⌫</button>`;
 document.querySelector('calc-controls').appendChild(backspaceButton);
 
 const onPressPoint = () => {
@@ -71,5 +74,5 @@ const onPressPoint = () => {
 	updateDisplay()
 }
 
-const decimalPointButton = html`<button style="grid-area: poin;" onclick=${onPressPoint}>.</button>`;
+const decimalPointButton = html`<button digit style="grid-area: poin;" onclick=${onPressPoint}>.</button>`;
 document.querySelector('calc-controls').appendChild(decimalPointButton);
