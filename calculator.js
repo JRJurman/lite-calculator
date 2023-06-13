@@ -75,6 +75,12 @@ const onPressOperator = (operator) => {
 };
 
 const onPressClear = () => {
+	// if we've already just cleared,
+	// also clear the tape
+	if (calcState.memory === '0' && calcState.value === '0') {
+		calcState.tape = [];
+	}
+
 	calcState.memory = '0';
 	calcState.operator = '+';
 	calcState.value = '0';
