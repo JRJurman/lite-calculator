@@ -37,7 +37,12 @@ define`
 `;
 
 const currentEval = () => {
-	return eval(`${calcState.memory} ${calcState.operator} ${calcState.value}`);
+	let result = eval(`${calcState.memory} ${calcState.operator} ${calcState.value}`);
+	if (String(result).match(/\.\d{5,}/)) {
+		// if we have more than 5 decimal values, truncate down
+		result = result.toFixed(5);
+	}
+	return result;
 };
 
 const updateDisplay = () => {
