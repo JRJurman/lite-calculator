@@ -66,7 +66,6 @@ const onPressOperator = (operator) => {
 	calcState.memory = result;
 	calcState.operator = operator;
 	calcState.value = '0';
-	console.log(calcState.memory);
 	updateDisplay();
 };
 
@@ -90,3 +89,25 @@ const onPressPoint = () => {
 	calcState.value = calcState.value + '.';
 	updateDisplay();
 };
+
+document.addEventListener('keyup', (event) => {
+	const key = event.key;
+	if (key.match(/\d/)) {
+		onPressDigit(key);
+	}
+	if (key.match(/[\+\-\/\*]/)) {
+		onPressOperator(key);
+	}
+	if (key === '.') {
+		onPressPoint();
+	}
+	if (key === 'Backspace') {
+		onPressBackspace();
+	}
+	if (key === 'Escape') {
+		onPressClear();
+	}
+	if (key === 'Enter') {
+		onPressOperator('+');
+	}
+});
