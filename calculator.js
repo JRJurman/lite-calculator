@@ -66,9 +66,13 @@ const onPressDigit = (num) => {
 };
 
 const onPressOperator = (operator) => {
-	const result = currentEval();
-	calcState.tape.push(`${calcState.memory} ${calcState.operator} ${calcState.value} = ${result}`);
-	calcState.memory = result;
+	// only push to the tape if we have a non-zero value
+	if (calcState.value !== '0') {
+		const result = currentEval();
+		calcState.tape.push(`${calcState.memory} ${calcState.operator} ${calcState.value} = ${result}`);
+		calcState.memory = result;
+	}
+
 	calcState.operator = operator;
 	calcState.value = '0';
 	updateDisplay();

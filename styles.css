@@ -15,6 +15,7 @@ button {
 	font-size: inherit;
 	margin: 2px;
 	color: black;
+	height: 2em;
 }
 
 button[digit] {
@@ -35,7 +36,6 @@ button[equal] {
 button[clear] {
 	background: rgb(248, 222, 159);
 	border: solid 2px rgb(226, 186, 127);
-	font-size: 0.8em;
 }
 
 calc-app {
