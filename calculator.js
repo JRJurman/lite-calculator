@@ -56,7 +56,7 @@ addAttributeListener(calcTape, 'tape', () => {
 });
 
 const onPressDigit = (num) => {
-	calcState.value = `${parseFloat(calcState.value + num)}`;
+	calcState.value = calcState.value === '0' ? String(num) : String(calcState.value + num);
 	updateDisplay();
 };
 
