@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1, width=device-width">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1, width=device-width" />
 		<meta charset="utf-8" />
-		<script src="https://unpkg.com/tram-lite@0.4.0/src/tram-lite.js"></script>
+		<script src="https://unpkg.com/tram-lite@2.4.0/src/tram-lite.js"></script>
 		<script defer src="./calculator.js"></script>
-		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="stylesheet" type="text/css" href="styles.css" />
 	</head>
 	<body>
 		<calc-app>
 			<calc-tape></calc-tape>
-			<calc-display>
-				<calc-memory></calc-memory>
-				<calc-operator></calc-operator>
-				<calc-value></calc-value>
-				<calc-preview></calc-preview>
-			</calc-display>
-			<calc-controls></calc-controls>
+			<calc-display></calc-display>
+			<calc-controls>
+				<button digit style="grid-area: but0" onclick="onPressDigit(0)">0</button>
+				<button digit style="grid-area: but1" onclick="onPressDigit(1)">1</button>
+				<button digit style="grid-area: but2" onclick="onPressDigit(2)">2</button>
+				<button digit style="grid-area: but3" onclick="onPressDigit(3)">3</button>
+				<button digit style="grid-area: but4" onclick="onPressDigit(4)">4</button>
+				<button digit style="grid-area: but5" onclick="onPressDigit(5)">5</button>
+				<button digit style="grid-area: but6" onclick="onPressDigit(6)">6</button>
+				<button digit style="grid-area: but7" onclick="onPressDigit(7)">7</button>
+				<button digit style="grid-area: but8" onclick="onPressDigit(8)">8</button>
+				<button digit style="grid-area: but9" onclick="onPressDigit(9)">9</button>
+
+				<button operator style="grid-area: plus" onclick="onPressOperator('+')">+</button>
+				<button operator style="grid-area: minu" onclick="onPressOperator('-')">-</button>
+				<button operator style="grid-area: divi" onclick="onPressOperator('/')">/</button>
+				<button operator style="grid-area: mult" onclick="onPressOperator('*')">*</button>
+				<button equal style="grid-area: equa" onclick="onPressOperator('+')">=</button>
+
+				<button clear style="grid-area: clea" onclick="onPressClear()">Clear</button>
+				<button clear style="grid-area: back" onclick="onPressBackspace()">⌫</button>
+				<button digit style="grid-area: poin" onclick="onPressPoint()">.</button>
+			</calc-controls>
 		</calc-app>
 	</body>
 </html>

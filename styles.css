@@ -1,61 +1,92 @@
-:root {
-	color-scheme: dark light;
+body {
+	margin: 0;
+	background: rgb(230, 221, 221);
 }
 
 button {
 	font-size: inherit;
-	border-radius: 50px;
-	border: none;
-	margin: 6px;
+	margin: 2px;
 }
 
-[digit] {
-	background: #FFAB0F;
+button[digit] {
+	background: rgb(230, 221, 221);
+	border: solid 2px rgb(193, 180, 176);
 }
 
-[operator] {
-	background: #247AFD;
+button[operator] {
+	background: rgb(191, 181, 178);
+	border: solid 2px rgb(156, 145, 140);
 }
 
-[equal] {
-	background: #00aa3e;
+button[equal] {
+	background: rgb(211, 99, 96);
+	border: solid 2px rgb(141, 54, 59);
 }
 
-[clear] {
-	background: #FE46A5;
+button[clear] {
+	background: rgb(248, 222, 159);
+	border: solid 2px rgb(226, 186, 127);
 	font-size: 0.8em;
 }
 
 calc-app {
 	height: 100vh;
 
-	font-size: max(12vh, 3em);
+	width: 450px;
+	font-size: 2em;
+
+	margin: auto;
+
 	display: flex;
-	align-items: center;
 	justify-content: end;
 	flex-direction: column;
 }
 
 calc-controls {
+	width: 100%;
 	display: grid;
 	font-size: 0.75em;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-areas:
-		"clea clea back divi"
-		"but7 but8 but9 mult"
-		"but4 but5 but6 minu"
-		"but1 but2 but3 plus"
-		"but0 but0 poin equa";
+		'clea clea back divi'
+		'but7 but8 but9 mult'
+		'but4 but5 but6 minu'
+		'but1 but2 but3 plus'
+		'but0 but0 poin equa';
 }
 
 calc-tape {
-	opacity: 0.8;
+	background: white;
+	width: calc(100% - 12px);
+	height: 100%;
+
+	display: flex;
+	align-items: flex-end;
+	justify-content: end;
+
+	margin: 3px;
+	padding: 3px;
 }
 
 calc-display {
+	width: calc(100% - 12px);
+	text-align: end;
+	background: rgb(10, 10, 23);
+	color: rgb(152, 152, 229);
+
+	margin: 3px;
+	padding: 3px;
 }
 
-calc-memory,
-calc-preview {
-	opacity: 0.5;
+calc-controls {
+	align-self: center;
+	display: grid;
+	font-size: 0.75em;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+		'clea clea back divi'
+		'but7 but8 but9 mult'
+		'but4 but5 but6 minu'
+		'but1 but2 but3 plus'
+		'but0 but0 poin equa';
 }
