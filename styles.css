@@ -32,7 +32,8 @@ button[clear] {
 calc-app {
 	height: 100vh;
 
-	width: 450px;
+	width: 100%;
+	max-width: 450px;
 	font-size: 2em;
 
 	margin: auto;
