@@ -1,11 +1,20 @@
+@font-face {
+	font-family: Atkinson-Hyperlegible;
+	src: url(./Atkinson-Hyperlegible-Regular-102.ttf);
+}
+
 body {
+	font-family: 'Atkinson-Hyperlegible';
 	margin: 0;
 	background: rgb(230, 221, 221);
+	touch-action: none; /* prevent double-tap zoom */
 }
 
 button {
+	font-family: inherit;
 	font-size: inherit;
 	margin: 2px;
+	color: black;
 }
 
 button[digit] {
@@ -59,7 +68,7 @@ calc-controls {
 calc-tape {
 	background: white;
 	width: calc(100% - 12px);
-	height: 100%;
+	min-height: 100%;
 
 	display: flex;
 	align-items: flex-end;
@@ -67,6 +76,8 @@ calc-tape {
 
 	margin: 3px;
 	padding: 3px;
+
+	overflow-y: scroll;
 }
 
 calc-display {

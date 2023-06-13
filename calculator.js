@@ -27,6 +27,7 @@ define`
 	<calc-tape tape="[]">
 		<style>
 			section {
+				text-align: end;
 				opacity: 0.8;
 			}
 		</style>
