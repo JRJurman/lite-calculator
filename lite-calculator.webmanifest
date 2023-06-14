@@ -4,7 +4,7 @@
 	"icons": [
 		{
 			"src": "lite-calculator/favicon.png",
-			"sizes": "512x512",
+			"sizes": "any",
 			"type": "image/png"
 		}
 	],
