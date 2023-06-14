@@ -1,6 +1,6 @@
 {
 	"name": "Lite Calculator",
-	"scope": "/lite-calculator/",
+	"scope": "https://jrjurman.com/lite-calculator/",
 	"description": "Simple Calculator with Paper Tape",
 	"icons": [
 		{
