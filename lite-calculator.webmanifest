@@ -1,5 +1,6 @@
 {
 	"name": "Lite Calculator",
+	"scope": "/lite-calculator/",
 	"description": "Simple Calculator with Paper Tape",
 	"icons": [
 		{
