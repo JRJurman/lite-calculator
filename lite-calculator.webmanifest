@@ -3,7 +3,7 @@
 	"description": "Simple Calculator with Paper Tape",
 	"icons": [
 		{
-			"src": "lite-calculator/favicon.png",
+			"src": "/favicon.png",
 			"sizes": "any",
 			"type": "image/png"
 		}
