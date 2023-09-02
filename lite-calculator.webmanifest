@@ -2,6 +2,7 @@
 	"name": "Lite Calculator",
 	"scope": "https://jrjurman.com/lite-calculator/",
 	"description": "Simple Calculator with Paper Tape",
+	"display": "standalone",
 	"icons": [
 		{
 			"src": "https://jrjurman.com/lite-calculator/favicon.png",
